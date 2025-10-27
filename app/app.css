@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@theme {
+  --spacing-fd-container: 1400px;
+  --fd-sidebar-width: 0px;
+  --fd-toc-width: 0px;
+  --fd-layout-width: 100vw;
+  --fd-banner-height: 0px;
+  --fd-nav-height: 0px;
+  --fd-tocnav-height: 0px;
+
+  --fd-diff-remove-color: rgba(200, 10, 100, 0.12);
+  --fd-diff-remove-symbol-color: rgb(230, 10, 100);
+  --fd-diff-add-color: rgba(14, 180, 100, 0.12);
+  --fd-diff-add-symbol-color: rgb(10, 200, 100);
+}
+
+/* Fix Fumadocs theme toggle icons */
+[data-theme-toggle] svg {
+  @apply fill-none;
+}
+
+
+/* #nd-subnav [data-search-full] {
+  @apply rounded-lg border-none;
+}
+
+#nd-toc {
+  inset-inline-end: 0 !important;
+  --fd-page-width: 100% !important;
+}
+
+#nd-page {
+  @apply max-w-none mx-0;
+}
+
+#nd-page > article {
+  @apply max-w-6xl mx-auto;
+}
+
+#nd-tocnav {
+  @apply border-b-0;
+}
+
+#nd-sidebar > div[data-fd-if-empty] {
+  @apply hidden;
+}
+
+#nd-sidebar {
+  @apply bg-transparent;
+} */
