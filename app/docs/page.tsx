@@ -28,12 +28,13 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 const renderer = toClientRenderer(
   docs.doc,
-  ({ toc, default: Mdx, frontmatter }) => {
+  ({ toc, default: Mdx, frontmatter, structuredData }) => {
+    const showTitle = frontmatter.title !== structuredData.headings[0]?.content;
     return (
       <DocsPage toc={toc}>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <DocsTitle>{frontmatter.title}</DocsTitle>
+        {showTitle && <DocsTitle className="text-3xl font-extrabold">{frontmatter.title}</DocsTitle>}
         <DocsDescription>{frontmatter.description}</DocsDescription>
         <DocsBody>
           <Mdx components={getMDXComponents()} />
