@@ -1,5 +1,6 @@
 import { use, useEffect, useId, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { PreviewPaneContainer } from './preview-pane';
 
 export function Mermaid({ chart }: { chart: string }) {
   const [mounted, setMounted] = useState(false);
@@ -41,18 +42,14 @@ function MermaidContent({ chart }: { chart: string }) {
     theme: resolvedTheme === 'dark' ? 'dark' : 'default',
   });
 
-  const { svg, bindFunctions } = use(
+  const { svg } = use(
     cachePromise(`${chart}-${resolvedTheme}`, () => {
       return mermaid.render(id, chart.replaceAll('\\n', '\n'));
     }),
   );
 
+
   return (
-    <div
-      ref={(container) => {
-        if (container) bindFunctions?.(container);
-      }}
-      dangerouslySetInnerHTML={{ __html: svg }}
-    />
+    <PreviewPaneContainer chart={chart} code={svg} />
   );
 }

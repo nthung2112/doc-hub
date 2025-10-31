@@ -1,8 +1,13 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
 import { BookMarked } from 'lucide-react';
 
-export function baseOptions(): BaseLayoutProps {
+export const githubLink = 'https://github.com/nthung2112/doc-hub';
+
+export function baseOptions(): Omit<DocsLayoutProps, 'tree'> {
   return {
+    sidebar: {
+      defaultOpenLevel: 1,
+    },
     nav: {
       title: (
         <>

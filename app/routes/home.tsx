@@ -38,21 +38,21 @@ const featuresData: Feature[] = [
     name: "Process Flow Diagrams",
     description: "Visualizing the inner workings of our services and applications.",
     icon: <Workflow size={iconSize} />,
-    href: "/docs/process-flows/introduction",
+    href: "/docs",
   },
   {
     id: 3,
     name: "Code Snippets",
     description: "Reusable code examples for common tasks and components.",
     icon: <Code size={iconSize} />,
-    href: "/docs/code-snippets/getting-started",
+    href: "/docs",
   },
   {
     id: 4,
     name: "Internal Tool Directory",
     description: "A comprehensive directory of all internal tools and resources.",
     icon: <ToolCase size={iconSize} />,
-    href: "/docs/internal-tools/tool-list",
+    href: "/docs",
   },
 ];
 
